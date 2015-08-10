@@ -1,4 +1,4 @@
-模仿此[网站](http:www.bootcss.com/p/layoutit)做的demo。
+模仿此[网站](http://www.bootcss.com/p/layoutit)做的demo。
 
 添加了一个动态的组件（左侧导航中——组件——最新通知），可以随意拖组件，然后点击保存，点击“新页面预览”，即可看到效果。
 
