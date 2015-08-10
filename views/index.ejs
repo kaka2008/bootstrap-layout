@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script type="text/javascript">
+      
+    function getCookie(name)//取cookies函数        
+    {
+        var arr = document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)"));
+        if(arr != null) return unescape(arr[2]); return null;
+    }
+
+	function delCookie(name)//删除cookie
+	{
+	    var exp = new Date();
+	    exp.setTime(exp.getTime() - 1);
+	    var cval=getCookie(name);
+	    if(cval!=null) document.cookie= name + "="+cval+";expires="+exp.toGMTString();
+	}
+
+    function setLocaleInk(loc){
+        var origin = getCookie(loc);
+        if(origin != null && origin != ""){
+        	delCookie(loc);
+        }
+        var extDate = new Date();
+        extDate.setDate(extDate.getDate()+365);
+        document.cookie = "locale_name="+loc+";expires="+extDate.toGMTString();
+
+        document.location.href = document.location;
+    }
+    </script>
+  </head>
+  <body>
+    <h1><%= title2 %></h1>
+    <p>Welcome to <%= title %></p>
+
+
+    <p>Hello: <%= __('Hello') %> kaka</p>
+
+    <p><%= __('China') %></p>
+
+    <p>
+    	请选择语言：<br/>
+    	<a href="javascript:void(0)" onclick="javascript:setLocaleInk('zh_CN')">中文</a>
+    	<br/>
+    	<a href="javascript:void(0)" onclick="javascript:setLocaleInk('en')">English</a>
+    </p>
+  </body>
+</html>

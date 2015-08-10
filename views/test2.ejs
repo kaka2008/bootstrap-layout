@@ -1,0 +1,33 @@
+<html>
+ <head>
+   <title>预览</title>
+   <link href="http://www.bootcss.com/p/layoutit/css/bootstrap-combined.min.css" rel="stylesheet">
+<link href="http://www.bootcss.com/p/layoutit/css/layoutit.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/stylesheets/editor.css">
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+ </head>
+ <body>
+    <div class="container-fluid">
+	<%-data%>
+	</div>
+ </body>
+ <script type="text/javascript">
+  $(function(){
+	  $("body").find("a").css("cursor","pointer");
+	  
+	  $("body").find("a").click(function(e){
+		  document.location.href = e.target;
+	  });
+	  
+	  function writeObj(obj){ 
+			var description = ""; 
+			for(var i in obj){   
+				var property=obj[i];   
+				description+=i+" = "+property+"\n";  
+			}   
+			alert(description); 
+	  } 
+  });
+</script>
+</html>
